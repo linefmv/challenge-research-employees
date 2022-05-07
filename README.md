@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="logo da softplan" src="../challenge-research-employees/src/assets/image/softplan-1601930502-552x368png.png" width="200px">
+  <img alt="logo da softplan" src="src/assets/image/softplan-1601930502-552x368png.png" width="200px">
 </p>
 
 <p align="center">
@@ -28,5 +28,3 @@
 2. Instale as dependências gerais com `yarn install`
 
 Este projeto reforça mensagem de commits com o padrão semântico.
-
-[Design]: Design.md
