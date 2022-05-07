@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import getData from "./service/api";
+import Header from "./components/Header/Header";
 
 import "./App.css";
 
@@ -8,16 +9,16 @@ function App() {
 
   const fetchData = async () => {
     const response = await getData();
-    setData(response.funcionarios[0]);
+    setData(response.funcionarios);
   };
   useEffect(() => {
     fetchData();
   }, []);
 
   return (
-    <div>
-      <h1>{data.nome}</h1>
-    </div>
+    <>
+      <Header />
+    </>
   );
 }
 
