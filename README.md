@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="logo da softplan" src="src/assets/image/softplan-1601930502-552x368png.png" width="200px">
+  <img alt="logo da softplan" src="src/assets/image/logo-softplan.png" width="200px">
 </p>
 
 <p align="center">
@@ -17,8 +17,7 @@
 
 ## Sobre o projeto
 
-<p align="justify">
-  Desenvolvimento de aplicativo com foco terapêutico, que através da reprodução de áudio objetivam o tratamento de emoções traumáticas, possibilitando o usuário escolher as playlists de acordo com a emoção desejada (ansiedade, autoestima, motivação, etc).
+<p align="justify">.
 </p>
 
 
