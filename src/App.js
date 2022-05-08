@@ -18,8 +18,8 @@ function App() {
 
   return (
     <>
-      <Header />
-      {!!data.funcionarios && <EmployeesList employeesData={data.funcionarios} />}
+     {!!data.itemsFuncionarios &&  <Header employeesItems={data.itemsFuncionarios} />}
+      <EmployeesList />
     </>
   );
 }
