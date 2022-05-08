@@ -29,9 +29,9 @@ const EmployeesList = ({ employeesItems }) => {
     if (event.target.value === "") {
       setData(searchApiData);
     } else {
-      const filterConfig = searchApiData.filter(item =>
-        item.nome.toLowerCase().includes(event.target.value.toLowerCase()),
-        );
+      const filterConfig = searchApiData.filter((item) =>
+        item.nome.toLowerCase().includes(event.target.value.toLowerCase())
+      );
       setData(filterConfig);
     }
     setFilterValue(event.target.value);
@@ -44,23 +44,27 @@ const EmployeesList = ({ employeesItems }) => {
         type="search"
       />
       <table>
-      {employeesItems.map((item) => {
-      return <th>{item}</th>
-        })}
-      {data.map((item) => {
-        return (
-          <>
-            <EmployeeDetails key={item.id}>
-            <EmployeeName> {item.nome} </EmployeeName>
-            <EmployeeRegister> {item.matricula} </EmployeeRegister>
-            <EmployeePosition> {item.cargo} </EmployeePosition>
-            <EmployeeBranch> {item.filial} </EmployeeBranch>
-            <EmployeeAdmission> {item.dataAdmissao} </EmployeeAdmission>
-            </EmployeeDetails>
+        <thead>
+          <tr>
+            {employeesItems.map((item) => {
+              return <th scope="col">{item}</th>;
+            })}
+          </tr>
+        </thead>
+        {data.map((item) => {
+          return (
+            <>
+              <EmployeeDetails key={item.id}>
+                <EmployeeName> {item.nome} </EmployeeName>
+                <EmployeePosition> {item.cargo} </EmployeePosition>
+                <EmployeeRegister> {item.matricula} </EmployeeRegister>
+                <EmployeeBranch> {item.filial} </EmployeeBranch>
+                <EmployeeAdmission> {item.dataAdmissao} </EmployeeAdmission>
+              </EmployeeDetails>
             </>
-            );
-          })}
-          </table>
+          );
+        })}
+      </table>
     </Container>
   );
 };
