@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 import getData from "../../service/api";
 import SearchBar from "../SearchBar/SearchBar";
 
-const EmployeesList = () => {
+const EmployeesList = ({ employeesItems }) => {
   const [data, setData] = useState([]);
   const [searchApiData, setSearchApiData] = useState([]);
   const [filterValue, setFilterValue] = useState("");
@@ -43,6 +43,10 @@ const EmployeesList = () => {
         onInput={(event) => handleFilter(event)}
         type="search"
       />
+      <table>
+      {employeesItems.map((item) => {
+      return <th>{item}</th>
+        })}
       {data.map((item) => {
         return (
           <>
@@ -56,6 +60,7 @@ const EmployeesList = () => {
             </>
             );
           })}
+          </table>
     </Container>
   );
 };
