@@ -9,21 +9,21 @@
 
 <h1 align="center">Find your employees!</h1>
 
-## Summary
+## Sumário
 
-- [Summary](#summary)
+- [Sumário](#sumario)
 - [Sobre o projeto](#sobre-o-projeto)
-- [Getting started](#getting-started)
+- [Instruções para iniciar o projeto](#instruções-para-iniciar-o-projeto)
 
 ## Sobre o projeto
 
-<p align="justify">.
-</p>
+<p align="justify">Realizado para auxiliar a sua empresa a buscar o funcionário de uma maneira rápida e prática!</p>
 
-
-## Getting started
+## Instruções para iniciar o projeto
 
 1. Clone este repositório
 2. Instale as dependências gerais com `yarn install`
+3. Inicie o servidor com o banco de dados `yarn start:server`
+4. Após, a terceira etapa, inicie o servidor com a aplicação no navagador de preferência, através do `yarn start`
 
 Este projeto reforça mensagem de commits com o padrão semântico.
