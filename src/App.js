@@ -10,7 +10,7 @@ function App() {
 
   const fetchData = async () => {
     const response = await getData();
-    setData(response);
+    setData(response.itemsFuncionarios);
   };
   useEffect(() => {
     fetchData();
@@ -18,8 +18,10 @@ function App() {
 
   return (
     <>
-     {!!data.itemsFuncionarios &&  <Header employeesItems={data.itemsFuncionarios} />}
-      <EmployeesList />
+       <>
+      <Header employeesItems={data} />
+      <EmployeesList employeesItems={data}/>
+      </>
     </>
   );
 }
