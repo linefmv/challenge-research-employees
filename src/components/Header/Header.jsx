@@ -3,11 +3,11 @@ import Logo from "../../assets/image/logo-softplan.png";
 import DropdownButton from "../DropdownButton/DropdownButton";
 import SearchBar from "../SearchBar/SearchBar";
 
-const Header = () => {
+const Header = ({ employeesItems }) => {
   return (
     <Container>
       <Image src={Logo} />
-      <DropdownButton />
+      <DropdownButton employeesItems={employeesItems}/>
       <SearchBar />
     </Container>
   );
