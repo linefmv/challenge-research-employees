@@ -19,7 +19,7 @@ function App() {
   return (
     <>
        <>
-      <Header employeesItems={data} />
+      <Header />
       <EmployeesList employeesItems={data}/>
       </>
     </>
