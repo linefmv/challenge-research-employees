@@ -13,22 +13,25 @@ export const Container = styled.main`
     width: 90%;
     border-collapse: collapse;
     border: none;
+    text-align: left;
+
   }
 
-  thead{
+  thead {
     width: 100%;
-    table-layout: auto;
-    text-align: left;
+    display: flex;
+    justify-content: space-evenly;
     background-color: #5c5cff;
     color: white;
+    align-items: center;
     & .caret {
-    width: 10px;
-    height: 10px;
+      width: 10px;
+      height: 10px;
+    }
   }
-  
-  table th {
-    padding: 12px 0;
-  
+  th {
+    padding: 15px 10px;
+
     &:first-child {
       border-radius: 10px 0 0 10px;
     }
@@ -43,8 +46,9 @@ export const EmployeeDetails = styled.tr`
   align-items: baseline;
   justify-items: center;
   border: 1px solid;
+  gap:0;
   grid-template-areas:
-    "image name register  branch admission delete"
+    "image name register branch admission delete"
     "image position register branch admission delete";
 
   img {

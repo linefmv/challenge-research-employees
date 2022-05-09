@@ -58,6 +58,11 @@ const EmployeesList = ({ employeesItems }) => {
     newData.splice(index, 1);
     setData(newData);
   };
+  const handleSort = () => {
+    const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
+    setData(sortedData);
+  };
+  
   return (
     <Container>
       {!!employeesItems && (
@@ -74,7 +79,7 @@ const EmployeesList = ({ employeesItems }) => {
             return (
               <th scope="col">
                 {item}
-                <button className="caret">
+                <button className="caret" onClick={handleSort}>
                   <img
                     className="caret"
                     type="image/png"
