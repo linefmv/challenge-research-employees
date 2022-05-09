@@ -36,16 +36,7 @@ export const Container = styled.main`
 
       & .caret {
         display: inline;
-        background: none;
-        color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
-      }
 
-      & .caretImg {
         width: 24px;
         filter: invert(1);
         padding-left: 5px;
@@ -56,7 +47,6 @@ export const Container = styled.main`
     }
   }
 `;
-
 export const EmployeeDetails = styled.tr`
   display: grid;
   align-items: baseline;

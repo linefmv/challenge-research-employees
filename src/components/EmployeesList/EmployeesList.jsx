@@ -11,6 +11,7 @@ import React, { useEffect, useState } from "react";
 import getData from "../../service/api";
 import SearchBar from "../SearchBar/SearchBar";
 import DropdownButton from "../DropdownButton/DropdownButton";
+import IconComponent from "../IconComponent/Icon";
 
 const EmployeesList = ({ employeesItems }) => {
   const [data, setData] = useState([]);
@@ -79,15 +80,13 @@ const EmployeesList = ({ employeesItems }) => {
             return (
               <th key={index} scope="col">
                 {item}
-                <button className="caret" onClick={handleSort}>
-                  <img
-                    className="caretImg"
-                    type="image/png"
+                  <IconComponent
+                    onClick={handleSort}
+                    className="caretImg caret"
                     rel="icon"
-                    src="https://img.icons8.com/ios-glyphs/60/chevron-down.png"
+                    src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/000000/external-arrow-down-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya.png"
                     alt=""
                   />
-                </button>
               </th>
             );
           })}
@@ -106,13 +105,10 @@ const EmployeesList = ({ employeesItems }) => {
                 <EmployeeBranch> {item.filial} </EmployeeBranch>
                 <EmployeeRegister> {item.matricula} </EmployeeRegister>
                 <EmployeeAdmission> {item.dataAdmissao} </EmployeeAdmission>
-                <button onClick={() => handleRemove(item.id)}>
-                  <img
-                    className="image"
-                    src="https://img.icons8.com/windows/32/000000/delete-forever.png"
-                    alt=""
-                  />
-                </button>
+                <IconComponent 
+                className="image" 
+                src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-delete-miscellaneous-kiranshastry-gradient-kiranshastry.png" 
+                onClick={() => handleRemove(item.id)} />
               </EmployeeDetails>
             );
           })}
