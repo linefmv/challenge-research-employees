@@ -18,8 +18,10 @@ const DropdownButton = ({ onChange }) => {
     <Container>
       <label>Filtrar por </label>
       <select onChange={onChange}>
-        {removeLastElementInArray.map((item) => (
-          <option value={item}>{item}</option>
+        {removeLastElementInArray.map((item, index) => (
+          <option key={index} value={item}>
+            {item}
+          </option>
         ))}
       </select>
     </Container>

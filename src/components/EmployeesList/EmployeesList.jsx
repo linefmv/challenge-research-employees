@@ -75,9 +75,9 @@ const EmployeesList = ({ employeesItems }) => {
       />
       <table>
         <thead>
-          {employeesItems.map((item) => {
+          {employeesItems.map((item, index) => {
             return (
-              <th scope="col">
+              <th key={index} scope="col">
                 {item}
                 <button className="caret" onClick={handleSort}>
                   <img
@@ -93,9 +93,9 @@ const EmployeesList = ({ employeesItems }) => {
           })}
         </thead>
         <tbody>
-          {data.map((item) => {
+          {data.map((item, index) => {
             return (
-              <EmployeeDetails key={item.id}>
+              <EmployeeDetails key={index}>
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGb3wWKOEGiZOiTSiZDoeHUAsyJPim4hWKGEXu5b_iWFxT-Lg-Lv5lqt4Jk4-i5XAbc0M&usqp=CAU"
                   alt=""
