@@ -30,33 +30,33 @@ const EmployeesList = ({ employeesItems }) => {
   const handleFilter = (event) => {
     if (event.target.value === "") {
       setData(searchApiData);
-    } if (getValueInsideOption === 'Funcionário(a)')  {
+    }
+    if (getValueInsideOption === "Funcionário(a)") {
       const filterConfig = searchApiData.filter((item) =>
         item.nome.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
     }
-    if (getValueInsideOption === 'Filial')  {
+    if (getValueInsideOption === "Filial") {
       const filterConfig = searchApiData.filter((item) =>
         item.filial.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
     } else {
       const filterConfig = searchApiData.filter((item) =>
-      item.matricula.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-    setData(filterConfig);
+        item.matricula.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+      setData(filterConfig);
     }
     setFilterValue(event.target.value);
   };
 
+
   return (
     <Container>
-     {!!employeesItems &&
-      <DropdownButton 
-      onChange={(e) => setOptionValue(e.target.value)}
-      />
-    }
+      {!!employeesItems && (
+        <DropdownButton onChange={(e) => setOptionValue(e.target.value)} />
+      )}
       <SearchBar
         value={filterValue}
         onInput={(event) => handleFilter(event)}
@@ -64,25 +64,41 @@ const EmployeesList = ({ employeesItems }) => {
       />
       <table>
         <thead>
-          <tr>
-            {employeesItems.map((item) => {
-              return <th scope="col">{item}</th>;
-            })}
-          </tr>
+          {employeesItems.map((item) => {
+            return (
+              <th scope="col">
+                {item}
+                <button className="caret">
+                  <img
+                    className="caret"
+                    type="image/png"
+                    rel="icon"
+                    src="https://img.icons8.com/ios-glyphs/60/chevron-down.png"
+                    alt=""
+                  />
+                </button>
+              </th>
+            );
+          })}
         </thead>
-        {data.map((item) => {
-          return (
-            <tbody>
-              <EmployeeDetails >
+        <tbody>
+          {data.map((item) => {
+            return (
+              <EmployeeDetails key={item.id}>
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGb3wWKOEGiZOiTSiZDoeHUAsyJPim4hWKGEXu5b_iWFxT-Lg-Lv5lqt4Jk4-i5XAbc0M&usqp=CAU"
+                  alt=""
+                />
                 <EmployeeName> {item.nome} </EmployeeName>
                 <EmployeePosition> {item.cargo} </EmployeePosition>
                 <EmployeeBranch> {item.filial} </EmployeeBranch>
                 <EmployeeRegister> {item.matricula} </EmployeeRegister>
                 <EmployeeAdmission> {item.dataAdmissao} </EmployeeAdmission>
+                
               </EmployeeDetails>
-            </tbody>
-          );
-        })}
+            );
+          })}
+        </tbody>
       </table>
     </Container>
   );
