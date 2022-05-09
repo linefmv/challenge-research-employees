@@ -14,7 +14,6 @@ export const Container = styled.main`
     border-collapse: collapse;
     border: none;
     text-align: left;
-
   }
 
   thead {
@@ -24,9 +23,9 @@ export const Container = styled.main`
     background-color: #5c5cff;
     color: white;
     align-items: center;
+
     & .caret {
-      width: 10px;
-      height: 10px;
+      display: none;
     }
   }
   th {
@@ -34,6 +33,23 @@ export const Container = styled.main`
 
     &:first-child {
       border-radius: 10px 0 0 10px;
+
+      & .caret {
+        display: inline;
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+      }
+
+      & .caretImg {
+        width: 24px;
+        filter: invert(1);
+        padding-left: 5px;
+      }
     }
     &:last-child {
       border-radius: 0 10px 10px 0;
@@ -46,12 +62,12 @@ export const EmployeeDetails = styled.tr`
   align-items: baseline;
   justify-items: center;
   border: 1px solid;
-  gap:0;
+  gap: 0;
   grid-template-areas:
     "image name register branch admission delete"
     "image position register branch admission delete";
 
-  img {
+  & .avatar {
     width: 63px;
     border-radius: 100%;
     grid-area: image;

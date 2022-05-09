@@ -62,7 +62,7 @@ const EmployeesList = ({ employeesItems }) => {
     const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
     setData(sortedData);
   };
-  
+
   return (
     <Container>
       {!!employeesItems && (
@@ -81,7 +81,7 @@ const EmployeesList = ({ employeesItems }) => {
                 {item}
                 <button className="caret" onClick={handleSort}>
                   <img
-                    className="caret"
+                    className="caretImg"
                     type="image/png"
                     rel="icon"
                     src="https://img.icons8.com/ios-glyphs/60/chevron-down.png"
@@ -99,6 +99,7 @@ const EmployeesList = ({ employeesItems }) => {
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGb3wWKOEGiZOiTSiZDoeHUAsyJPim4hWKGEXu5b_iWFxT-Lg-Lv5lqt4Jk4-i5XAbc0M&usqp=CAU"
                   alt=""
+                  className="avatar"
                 />
                 <EmployeeName> {item.nome} </EmployeeName>
                 <EmployeePosition> {item.cargo} </EmployeePosition>
