@@ -51,7 +51,13 @@ const EmployeesList = ({ employeesItems }) => {
     setFilterValue(event.target.value);
   };
 
+  const handleRemove = (rowId) => {
+    const newData = [...data];
+    const index = data.findIndex((data) => data.id === rowId);
 
+    newData.splice(index, 1);
+    setData(newData);
+  };
   return (
     <Container>
       {!!employeesItems && (
@@ -94,7 +100,13 @@ const EmployeesList = ({ employeesItems }) => {
                 <EmployeeBranch> {item.filial} </EmployeeBranch>
                 <EmployeeRegister> {item.matricula} </EmployeeRegister>
                 <EmployeeAdmission> {item.dataAdmissao} </EmployeeAdmission>
-                
+                <button onClick={() => handleRemove(item.id)}>
+                  <img
+                    className="image"
+                    src="https://img.icons8.com/windows/32/000000/delete-forever.png"
+                    alt=""
+                  />
+                </button>
               </EmployeeDetails>
             );
           })}

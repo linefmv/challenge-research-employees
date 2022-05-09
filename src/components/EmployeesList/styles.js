@@ -9,18 +9,26 @@ export const Container = styled.main`
   }
 
   table {
-    width: 95%;
+    display: grid;
+    width: 90%;
     border-collapse: collapse;
     border: none;
   }
 
-   th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+  thead{
+    width: 100%;
+    table-layout: auto;
     text-align: left;
     background-color: #5c5cff;
     color: white;
-
+    & .caret {
+    width: 10px;
+    height: 10px;
+  }
+  
+  table th {
+    padding: 12px 0;
+  
     &:first-child {
       border-radius: 10px 0 0 10px;
     }
@@ -31,27 +39,43 @@ export const Container = styled.main`
 `;
 
 export const EmployeeDetails = styled.tr`
-  & :nth-child(-n + 2) {
-    width: fit-content;
-    display: flex;
+  display: grid;
+  align-items: baseline;
+  justify-items: center;
+  border: 1px solid;
+  grid-template-areas:
+    "image name register  branch admission delete"
+    "image position register branch admission delete";
+
+  img {
+    width: 63px;
+    border-radius: 100%;
+    grid-area: image;
   }
- text-align: center;
+  & .image {
+    width: 25px;
+    cursor: pointer;
+    grid-area: delete;
+  }
+  /* &:nth-child(odd) {
+    background-color: #5c2cff;
+  } */
+  &:hover {
+    background-color: #ddd;
+  }
 `;
 export const EmployeeName = styled.td`
   grid-area: name;
-  border-radius: 10px 0 0 0;
 `;
 export const EmployeeRegister = styled.td`
   grid-area: register;
 `;
 export const EmployeePosition = styled.td`
   grid-area: position;
-  border-radius: 0 0 0 10px;
 `;
 export const EmployeeBranch = styled.td`
   grid-area: branch;
 `;
 export const EmployeeAdmission = styled.td`
   grid-area: admission;
-  border-radius: 0 10px 10px 0;
 `;
