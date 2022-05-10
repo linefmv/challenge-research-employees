@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  display: inline;
   background: none;
   color: inherit;
   border: none;

@@ -4,7 +4,7 @@ import getData from "../../service/api";
 
 const DropdownButton = ({ onChange }) => {
   const [data, setData] = useState([]);
-  // const [getValueInsideOption, setOptionValue] = useState("");
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await getData();
