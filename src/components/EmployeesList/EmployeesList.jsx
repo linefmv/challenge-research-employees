@@ -1,3 +1,9 @@
+import React, { useEffect, useState } from "react";
+import getData from "../../service/api";
+import SearchBar from "../SearchBar/SearchBar";
+import DropdownButton from "../DropdownButton/DropdownButton";
+import IconComponent from "../IconComponent/IconComponent";
+
 import {
   Container,
   EmployeeDetails,
@@ -7,10 +13,6 @@ import {
   EmployeeBranch,
   EmployeeAdmission,
 } from "./styles";
-import React, { useEffect, useState } from "react";
-import getData from "../../service/api";
-import SearchBar from "../SearchBar/SearchBar";
-import DropdownButton from "../DropdownButton/DropdownButton";
 
 const EmployeesList = ({ employeesItems }) => {
   const [data, setData] = useState([]);
@@ -30,25 +32,26 @@ const EmployeesList = ({ employeesItems }) => {
   const handleFilter = (event) => {
     if (event.target.value === "") {
       setData(searchApiData);
-    } if (getValueInsideOption ===  "Funcionário(a)" ) {
-      const filterConfig = searchApiData.filter(item =>
-        item.nome.toLowerCase().includes(event.target.value.toLowerCase()),
-        );
+    }
+    if (getValueInsideOption === "Funcionário(a)") {
+      const filterConfig = searchApiData.filter((item) =>
+        item.nome.toLowerCase().includes(event.target.value.toLowerCase())
+      );
       setData(filterConfig);
     }
     setFilterValue(event.target.value);
   };
 
-  const handleRemove = (rowId) => {
+  const handleSortNamebyAsc = () => {
+    const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
+    setData(sortedData);
+  };
+  const handleRemoveRow = (rowId) => {
     const newData = [...data];
     const index = data.findIndex((data) => data.id === rowId);
 
     newData.splice(index, 1);
     setData(newData);
-  };
-  const handleSort = () => {
-    const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
-    setData(sortedData);
   };
 
   return (
@@ -67,15 +70,13 @@ const EmployeesList = ({ employeesItems }) => {
             return (
               <th scope="col">
                 {item}
-                <button className="caret" onClick={handleSort}>
-                  <img
-                    className="caretImg"
-                    type="image/png"
-                    rel="icon"
-                    src="https://img.icons8.com/ios-glyphs/60/chevron-down.png"
-                    alt=""
-                  />
-                </button>
+                <IconComponent
+                  onClick={handleSortNamebyAsc}
+                  className="caretImg caret"
+                  rel="icon"
+                  src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/000000/external-arrow-down-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya.png"
+                  alt="Icon with arrow down"
+                />
               </th>
             );
           })}
@@ -94,13 +95,13 @@ const EmployeesList = ({ employeesItems }) => {
                 <EmployeeBranch> {item.filial} </EmployeeBranch>
                 <EmployeeRegister> {item.matricula} </EmployeeRegister>
                 <EmployeeAdmission> {item.dataAdmissao} </EmployeeAdmission>
-                <button onClick={() => handleRemove(item.id)}>
-                  <img
+                <td>
+                  <IconComponent
                     className="image"
-                    src="https://img.icons8.com/windows/32/000000/delete-forever.png"
-                    alt=""
+                    src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-delete-miscellaneous-kiranshastry-gradient-kiranshastry.png"
+                    onClick={() => handleRemoveRow(item.id)}
                   />
-                </button>
+                </td>
               </EmployeeDetails>
             );
           })}
