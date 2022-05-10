@@ -15,43 +15,42 @@ import IconComponent from "../IconComponent/Icon";
 
 const EmployeesList = ({ employeesItems }) => {
   const [data, setData] = useState([]);
-  const [searchApiData, setSearchApiData] = useState([]);
+  const [searchData, setSearchData] = useState([]);
   const [filterValue, setFilterValue] = useState("");
-  const [getValueInsideOption, setOptionValue] = useState("");
+  const [selectValueOption, setOptionValue] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await getData();
       setData(response.funcionarios);
-      setSearchApiData(response.funcionarios);
+      setSearchData(response.funcionarios);
     };
     fetchData();
   }, []);
 
   const handleFilter = (event) => {
     if (event.target.value === "") {
-      setData(searchApiData);
+      setData(searchData);
     }
-    if (getValueInsideOption === "Funcionário(a)") {
-      const filterConfig = searchApiData.filter((item) =>
+    if (selectValueOption === "Funcionário(a)") {
+      const filterConfig = searchData.filter((item) =>
         item.nome.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
     }
-    if (getValueInsideOption === "Filial") {
-      const filterConfig = searchApiData.filter((item) =>
+    if (selectValueOption === "Filial") {
+      const filterConfig = searchData.filter((item) =>
         item.filial.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
     } else {
-      const filterConfig = searchApiData.filter((item) =>
+      const filterConfig = searchData.filter((item) =>
         item.matricula.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
     }
     setFilterValue(event.target.value);
   };
-
   const handleRemove = (rowId) => {
     const newData = [...data];
     const index = data.findIndex((data) => data.id === rowId);
@@ -59,11 +58,11 @@ const EmployeesList = ({ employeesItems }) => {
     newData.splice(index, 1);
     setData(newData);
   };
+
   const handleSort = () => {
     const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
     setData(sortedData);
   };
-
   return (
     <Container>
       {!!employeesItems && (
@@ -80,13 +79,13 @@ const EmployeesList = ({ employeesItems }) => {
             return (
               <th key={index} scope="col">
                 {item}
-                  <IconComponent
-                    onClick={handleSort}
-                    className="caretImg caret"
-                    rel="icon"
-                    src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/000000/external-arrow-down-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya.png"
-                    alt=""
-                  />
+                <IconComponent
+                  onClick={handleSort}
+                  className="caretImg caret"
+                  rel="icon"
+                  src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/000000/external-arrow-down-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya.png"
+                  alt=""
+                />
               </th>
             );
           })}
@@ -105,10 +104,11 @@ const EmployeesList = ({ employeesItems }) => {
                 <EmployeeBranch> {item.filial} </EmployeeBranch>
                 <EmployeeRegister> {item.matricula} </EmployeeRegister>
                 <EmployeeAdmission> {item.dataAdmissao} </EmployeeAdmission>
-                <IconComponent 
-                className="image" 
-                src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-delete-miscellaneous-kiranshastry-gradient-kiranshastry.png" 
-                onClick={() => handleRemove(item.id)} />
+                <IconComponent
+                  className="image"
+                  src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-delete-miscellaneous-kiranshastry-gradient-kiranshastry.png"
+                  onClick={() => handleRemove(item.id)}
+                />
               </EmployeeDetails>
             );
           })}
