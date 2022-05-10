@@ -15,7 +15,7 @@ import IconComponent from "../IconComponent/Icon";
 
 const EmployeesList = ({ employeesItems }) => {
   const [data, setData] = useState([]);
-  const [searchData, setSearchData] = useState([]);
+  const [searchData, setSearchApiData] = useState([]);
   const [filterValue, setFilterValue] = useState("");
   const [selectValueOption, setOptionValue] = useState("");
 
@@ -23,7 +23,7 @@ const EmployeesList = ({ employeesItems }) => {
     const fetchData = async () => {
       const response = await getData();
       setData(response.funcionarios);
-      setSearchData(response.funcionarios);
+      setSearchApiData(response.funcionarios);
     };
     fetchData();
   }, []);
@@ -51,6 +51,7 @@ const EmployeesList = ({ employeesItems }) => {
     }
     setFilterValue(event.target.value);
   };
+
   const handleRemoveRow = (rowId) => {
     const newData = [...data];
     const index = data.findIndex((data) => data.id === rowId);
@@ -68,29 +69,25 @@ const EmployeesList = ({ employeesItems }) => {
       {!!employeesItems && (
         <DropdownButton onChange={(e) => setOptionValue(e.target.value)} />
       )}
-      <SearchBar
-        value={filterValue}
-        onInput={(event) => handleFilter(event)}
-        type="search"
-      />
+      <SearchBar value={filterValue} onInput={(event) => handleFilter(event)} />
       <table>
         <thead>
-          <tr> 
-          {employeesItems.map((item, index) => {
-            return (
-              <th key={index} scope="col">
-                {item}
-                <IconComponent
-                  onClick={handleSortNamebyAsc}
-                  className="caretImg caret"
-                  rel="icon"
-                  src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/000000/external-arrow-down-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya.png"
-                  alt="Icon with arrow down"
-                />
-              </th>
-            );
-          })}
-              </tr>
+          <tr>
+            {employeesItems.map((item, index) => {
+              return (
+                <th key={index} scope="col">
+                  {item}
+                  <IconComponent
+                    onClick={handleSortNamebyAsc}
+                    className="caretImg caret"
+                    rel="icon"
+                    src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/000000/external-arrow-down-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya.png"
+                    alt="Icon with arrow down"
+                  />
+                </th>
+              );
+            })}
+          </tr>
         </thead>
         <tbody>
           {data.map((item, index) => {
