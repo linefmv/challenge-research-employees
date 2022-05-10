@@ -15,7 +15,7 @@ import IconComponent from "../IconComponent/Icon";
 
 const EmployeesList = ({ employeesItems }) => {
   const [data, setData] = useState([]);
-  const [searchData, setSearchApiData] = useState([]);
+  const [searchApiData, setSearchApiData] = useState([]);
   const [filterValue, setFilterValue] = useState("");
   const [selectValueOption, setOptionValue] = useState("");
 
@@ -30,22 +30,23 @@ const EmployeesList = ({ employeesItems }) => {
 
   const handleFilter = (event) => {
     if (event.target.value === "") {
-      setData(searchData);
+      setData(searchApiData);
     }
     if (selectValueOption === "Funcionário(a)") {
-      const filterConfig = searchData.filter((item) =>
-        item.nome.toLowerCase().includes(event.target.value.toLowerCase())
+      const filterConfig = searchApiData.filter((item) =>
+        item.filial.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
     }
     if (selectValueOption === "Filial") {
-      const filterConfig = searchData.filter((item) =>
+      const filterConfig = searchApiData.filter((item) =>
         item.filial.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
-    } else {
-      const filterConfig = searchData.filter((item) =>
-        item.matricula.toLowerCase().includes(event.target.value.toLowerCase())
+    }
+    if (selectValueOption === "Matricula") {
+      const filterConfig = searchApiData.filter((item) =>
+        item.filial.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
     }
