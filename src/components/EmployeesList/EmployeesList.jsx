@@ -51,7 +51,7 @@ const EmployeesList = ({ employeesItems }) => {
     }
     setFilterValue(event.target.value);
   };
-  const handleRemove = (rowId) => {
+  const handleRemoveRow = (rowId) => {
     const newData = [...data];
     const index = data.findIndex((data) => data.id === rowId);
 
@@ -59,7 +59,7 @@ const EmployeesList = ({ employeesItems }) => {
     setData(newData);
   };
 
-  const handleSort = () => {
+  const handleSortNamebyAsc = () => {
     const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
     setData(sortedData);
   };
@@ -80,11 +80,11 @@ const EmployeesList = ({ employeesItems }) => {
               <th key={index} scope="col">
                 {item}
                 <IconComponent
-                  onClick={handleSort}
+                  onClick={handleSortNamebyAsc}
                   className="caretImg caret"
                   rel="icon"
                   src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/000000/external-arrow-down-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya.png"
-                  alt=""
+                  alt="Icon with arrow down"
                 />
               </th>
             );
@@ -107,7 +107,7 @@ const EmployeesList = ({ employeesItems }) => {
                 <IconComponent
                   className="image"
                   src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-delete-miscellaneous-kiranshastry-gradient-kiranshastry.png"
-                  onClick={() => handleRemove(item.id)}
+                  onClick={() => handleRemoveRow(item.id)}
                 />
               </EmployeeDetails>
             );

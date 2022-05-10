@@ -54,8 +54,8 @@ export const EmployeeDetails = styled.tr`
   border: 1px solid;
   gap: 0;
   grid-template-areas:
-    "image name register branch admission delete"
-    "image position register branch admission delete";
+    "name register branch admission delete"
+    "position register branch admission delete";
 
   & .avatar {
     width: 63px;
