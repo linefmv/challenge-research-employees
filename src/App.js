@@ -18,10 +18,8 @@ function App() {
 
   return (
     <>
-       <>
-      <Header />
-      <EmployeesList employeesItems={data}/>
-      </>
+        <Header />
+        <EmployeesList employeesItems={data} />
     </>
   );
 }
