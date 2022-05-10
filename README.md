@@ -23,7 +23,7 @@
 
 1. Clone este repositório
 2. Instale as dependências gerais com `yarn install`
-3. Inicie o servidor com o banco de dados `yarn start:server`
-4. Após, a terceira etapa, inicie o servidor com a aplicação no navagador de preferência, através do `yarn start`
+3. Inicie o banco de dados `yarn start:server`
+4. Após, a terceira etapa, inicie o servidor com a aplicação no navagador de preferência, com o  `yarn start`
 
 Este projeto reforça mensagem de commits com o padrão semântico.
