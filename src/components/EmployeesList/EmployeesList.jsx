@@ -30,22 +30,10 @@ const EmployeesList = ({ employeesItems }) => {
   const handleFilter = (event) => {
     if (event.target.value === "") {
       setData(searchApiData);
-    }
-    if (getValueInsideOption === "Funcionário(a)") {
-      const filterConfig = searchApiData.filter((item) =>
-        item.nome.toLowerCase().includes(event.target.value.toLowerCase())
-      );
-      setData(filterConfig);
-    }
-    if (getValueInsideOption === "Filial") {
-      const filterConfig = searchApiData.filter((item) =>
-        item.filial.toLowerCase().includes(event.target.value.toLowerCase())
-      );
-      setData(filterConfig);
-    } else {
-      const filterConfig = searchApiData.filter((item) =>
-        item.matricula.toLowerCase().includes(event.target.value.toLowerCase())
-      );
+    } if (getValueInsideOption ===  "Funcionário(a)" ) {
+      const filterConfig = searchApiData.filter(item =>
+        item.nome.toLowerCase().includes(event.target.value.toLowerCase()),
+        );
       setData(filterConfig);
     }
     setFilterValue(event.target.value);
