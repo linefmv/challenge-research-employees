@@ -75,6 +75,7 @@ const EmployeesList = ({ employeesItems }) => {
       />
       <table>
         <thead>
+          <tr> 
           {employeesItems.map((item, index) => {
             return (
               <th key={index} scope="col">
@@ -89,27 +90,36 @@ const EmployeesList = ({ employeesItems }) => {
               </th>
             );
           })}
+              </tr>
         </thead>
         <tbody>
           {data.map((item, index) => {
             return (
-              <EmployeeDetails key={index}>
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGb3wWKOEGiZOiTSiZDoeHUAsyJPim4hWKGEXu5b_iWFxT-Lg-Lv5lqt4Jk4-i5XAbc0M&usqp=CAU"
-                  alt=""
-                  className="avatar"
-                />
-                <EmployeeName> {item.nome} </EmployeeName>
-                <EmployeePosition> {item.cargo} </EmployeePosition>
-                <EmployeeBranch> {item.filial} </EmployeeBranch>
-                <EmployeeRegister> {item.matricula} </EmployeeRegister>
-                <EmployeeAdmission> {item.dataAdmissao} </EmployeeAdmission>
-                <IconComponent
-                  className="image"
-                  src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-delete-miscellaneous-kiranshastry-gradient-kiranshastry.png"
-                  onClick={() => handleRemoveRow(item.id)}
-                />
-              </EmployeeDetails>
+              <>
+                <EmployeeDetails key={index}>
+                  <td>
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGb3wWKOEGiZOiTSiZDoeHUAsyJPim4hWKGEXu5b_iWFxT-Lg-Lv5lqt4Jk4-i5XAbc0M&usqp=CAU"
+                      alt=""
+                      className="avatar"
+                    />
+                  </td>
+                  <div className="ceoAndName">
+                    <EmployeeName> {item.nome} </EmployeeName>
+                    <EmployeePosition> {item.cargo} </EmployeePosition>
+                  </div>
+                  <EmployeeBranch> {item.filial} </EmployeeBranch>
+                  <EmployeeRegister> {item.matricula} </EmployeeRegister>
+                  <EmployeeAdmission> {item.dataAdmissao} </EmployeeAdmission>
+                  <td>
+                    <IconComponent
+                      className="image"
+                      src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-delete-miscellaneous-kiranshastry-gradient-kiranshastry.png"
+                      onClick={() => handleRemoveRow(item.id)}
+                    />
+                  </td>
+                </EmployeeDetails>
+              </>
             );
           })}
         </tbody>
