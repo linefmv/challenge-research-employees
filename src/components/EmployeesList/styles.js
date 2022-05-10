@@ -4,7 +4,6 @@ export const Container = styled.main`
   display: grid;
   justify-items: center;
   width: 100%;
-
   input {
     margin-bottom: 10px;
   }
@@ -17,19 +16,24 @@ export const Container = styled.main`
     border-bottom: 0.2px solid #d1cbcb;
     color: #000;
     align-items: center;
-
-    & .caret {
-      display: none;
-    }
   }
   th {
     padding: 15px 10px;
 
-    & .caret {
-      display: inline;
+    & .caretImg {
       width: 24px;
-      filter: invert(1);
+      filter: invert(0);
       padding-left: 5px;
+    }
+
+    & .caret {
+      display: none;
+    }
+    
+    &:first-child {
+      & .caret {
+        display: inline;
+      }
     }
   }
 `;
