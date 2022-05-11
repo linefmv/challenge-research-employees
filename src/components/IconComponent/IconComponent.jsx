@@ -1,6 +1,6 @@
 import { Button, Image } from "./styles";
 
- const IconComponent = ({ size, className, style, onClick, src }) => {
+const IconComponent = ({ size, className, style, onClick, src }) => {
   return (
     <Button onClick={onClick}>
       <Image
