@@ -20,23 +20,25 @@ const EmployeesList = ({ employeesItems }) => {
   }, []);
 
   return (
-    <Container>
-      <Header
-        employeesItems={employeesItems}
-        searchApiData={searchApiData}
-        setData={setData}
-      />
-      <table>
-        <TableHead
+    <>
+      <Container>
+        <Header
           employeesItems={employeesItems}
+          searchApiData={searchApiData}
           setData={setData}
-          data={data}
         />
-        <tbody>
-          <TableRow data={data} setData={setData} />
-        </tbody>
-      </table>
-    </Container>
+        <table>
+          <TableHead
+            employeesItems={employeesItems}
+            setData={setData}
+            data={data}
+          />
+          <tbody>
+            <TableRow data={data} setData={setData} />
+          </tbody>
+        </table>
+      </Container>
+    </>
   );
 };
 
