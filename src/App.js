@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import getData from "./service/api";
-import Header from "./components/Header/Header";
 import EmployeesList from "./components/EmployeesList/EmployeesList";
+import Footer from "./components/Footer/Footer";
+import BackToTopButton from "./components/BackToTopButton/BackToTopButton";
 
 import "./App.css";
 
@@ -18,10 +19,9 @@ function App() {
 
   return (
     <>
-       <>
-      <Header />
-      <EmployeesList employeesItems={data}/>
-      </>
+      <EmployeesList employeesItems={data} />
+      <BackToTopButton />
+      <Footer />
     </>
   );
 }

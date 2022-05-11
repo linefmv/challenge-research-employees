@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
-  display: grid;
+  display: flex;
   justify-items: center;
   width: 100%;
+<<<<<<< HEAD
   input {
     margin-bottom: 10px;
   }
@@ -66,20 +67,14 @@ export const EmployeeDetails = styled.tr`
   }
   &:hover {
     background-color: #ddd;
+=======
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+
+  table {
+    margin: 40px 0;
+    width: 84%
+>>>>>>> alterations-childs
   }
-`;
-export const EmployeeName = styled.td`
-  grid-area: name;
-`;
-export const EmployeeRegister = styled.td`
-  grid-area: register;
-`;
-export const EmployeePosition = styled.td`
-  grid-area: position;
-`;
-export const EmployeeBranch = styled.td`
-  grid-area: branch;
-`;
-export const EmployeeAdmission = styled.td`
-  grid-area: admission;
 `;
