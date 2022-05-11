@@ -1,5 +1,4 @@
 import {
-  Container,
   EmployeeDetails,
   EmployeeName,
   EmployeeRegister,
@@ -7,11 +6,11 @@ import {
   EmployeeBranch,
   EmployeeAdmission,
 } from "./styles";
+
 import IconComponent from "../IconComponent/Icon";
 
 const TableRow = ({ data, setData }) => {
-  
-    const handleRemoveRow = (rowId) => {
+  const handleRemoveRow = (rowId) => {
     const newData = [...data];
     const index = data.findIndex((data) => data.id === rowId);
 
@@ -20,7 +19,7 @@ const TableRow = ({ data, setData }) => {
   };
 
   return (
-    <Container>
+    <>
       {data.map((item, index) => {
         return (
           <>
@@ -50,7 +49,7 @@ const TableRow = ({ data, setData }) => {
           </>
         );
       })}
-    </Container>
+    </>
   );
 };
 
