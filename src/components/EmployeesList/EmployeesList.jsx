@@ -1,16 +1,18 @@
-import { Container } from "./styles";
 import React, { useEffect, useState } from "react";
 import getData from "../../service/api";
 import SearchBar from "../SearchBar/SearchBar";
 import DropdownButton from "../DropdownButton/DropdownButton";
 import IconComponent from "../IconComponent/Icon";
+
 import TableRow from "../TableRow/TableRow";
+
+import { Container } from "./styles";
 
 const EmployeesList = ({ employeesItems }) => {
   const [data, setData] = useState([]);
-  const [searchData, setSearchApiData] = useState([]);
+  const [searchApiData, setSearchApiData] = useState([]);
   const [filterValue, setFilterValue] = useState("");
-  const [selectValueOption, setOptionValue] = useState("");
+  const [getValueInsideOption, setOptionValue] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,21 +25,22 @@ const EmployeesList = ({ employeesItems }) => {
 
   const handleFilter = (event) => {
     if (event.target.value === "") {
-      setData(searchData);
+      setData(searchApiData);
     }
-    if (selectValueOption === "Funcionário(a)") {
-      const filterConfig = searchData.filter((item) =>
+    if (getValueInsideOption === "Funcionário(a)") {
+      const filterConfig = searchApiData.filter((item) =>
         item.nome.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
     }
-    if (selectValueOption === "Filial") {
-      const filterConfig = searchData.filter((item) =>
+    if (getValueInsideOption === "Filial") {
+      const filterConfig = searchApiData.filter((item) =>
         item.filial.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
-    } else {
-      const filterConfig = searchData.filter((item) =>
+    }
+    if (getValueInsideOption === "Matricula") {
+      const filterConfig = searchApiData.filter((item) =>
         item.matricula.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
@@ -45,14 +48,19 @@ const EmployeesList = ({ employeesItems }) => {
     setFilterValue(event.target.value);
   };
 
-  
   const handleSortNamebyAsc = () => {
     const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
     setData(sortedData);
   };
+
   return (
     <Container>
-        <DropdownButton data={employeesItems} onChange={(e) => setOptionValue(e.target.value)} />
+      {!!employeesItems && (
+        <DropdownButton
+          data={employeesItems}
+          onChange={(e) => setOptionValue(e.target.value)}
+        />
+      )}
       <SearchBar value={filterValue} onInput={(event) => handleFilter(event)} />
       <table>
         <thead>
@@ -74,7 +82,7 @@ const EmployeesList = ({ employeesItems }) => {
           </tr>
         </thead>
         <tbody>
-          <TableRow data={data} setData={setData}/>
+          <TableRow data={data} setData={setData} />
         </tbody>
       </table>
     </Container>
