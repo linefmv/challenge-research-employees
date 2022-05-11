@@ -7,6 +7,7 @@ export const EmployeeDetails = styled.tr`
   justify-content: space-around;
   border-bottom: 0.2px solid #d1cbcb;
   padding: 12px 0;
+  margin-bottom: 40px;
 
 
   & .avatar {
