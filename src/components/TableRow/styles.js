@@ -7,8 +7,6 @@ export const EmployeeDetails = styled.tr`
   justify-content: space-around;
   border-bottom: 0.2px solid #d1cbcb;
   padding: 12px 0;
-  margin-bottom: 40px;
-
 
   & .avatar {
     width: 63px;
@@ -31,7 +29,7 @@ export const EmployeeDetails = styled.tr`
     background-color: #ddd;
   }
 
-  @media (max-width: 950px) {    
+  @media (max-width: 950px) {
     td {
       font-size: 12px;
       width: fit-content;
@@ -59,7 +57,7 @@ export const EmployeeDetails = styled.tr`
 
 export const TableData = styled.td`
   font-size: 15px;
-  
+
   td {
     width: 150px;
     text-align: center;
