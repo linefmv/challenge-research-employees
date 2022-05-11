@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import getData from "../../service/api";
-import SearchBar from "../SearchBar/SearchBar";
-import DropdownButton from "../DropdownButton/DropdownButton";
 import IconComponent from "../IconComponent/Icon";
-
+import Header from "../Header/Header";
 import TableRow from "../TableRow/TableRow";
 
 import { Container } from "./styles";
@@ -11,8 +9,6 @@ import { Container } from "./styles";
 const EmployeesList = ({ employeesItems }) => {
   const [data, setData] = useState([]);
   const [searchApiData, setSearchApiData] = useState([]);
-  const [filterValue, setFilterValue] = useState("");
-  const [getValueInsideOption, setOptionValue] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,31 +19,6 @@ const EmployeesList = ({ employeesItems }) => {
     fetchData();
   }, []);
 
-  const handleFilter = (event) => {
-    if (event.target.value === "") {
-      setData(searchApiData);
-    }
-    if (getValueInsideOption === "Funcionário(a)") {
-      const filterConfig = searchApiData.filter((item) =>
-        item.nome.toLowerCase().includes(event.target.value.toLowerCase())
-      );
-      setData(filterConfig);
-    }
-    if (getValueInsideOption === "Filial") {
-      const filterConfig = searchApiData.filter((item) =>
-        item.filial.toLowerCase().includes(event.target.value.toLowerCase())
-      );
-      setData(filterConfig);
-    }
-    if (getValueInsideOption === "Matricula") {
-      const filterConfig = searchApiData.filter((item) =>
-        item.matricula.toLowerCase().includes(event.target.value.toLowerCase())
-      );
-      setData(filterConfig);
-    }
-    setFilterValue(event.target.value);
-  };
-
   const handleSortNamebyAsc = () => {
     const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
     setData(sortedData);
@@ -55,13 +26,11 @@ const EmployeesList = ({ employeesItems }) => {
 
   return (
     <Container>
-      {!!employeesItems && (
-        <DropdownButton
-          data={employeesItems}
-          onChange={(e) => setOptionValue(e.target.value)}
-        />
-      )}
-      <SearchBar value={filterValue} onInput={(event) => handleFilter(event)} />
+      <Header
+        employeesItems={employeesItems}
+        searchApiData={searchApiData}
+        setData={setData}
+      />
       <table>
         <thead>
           <tr>

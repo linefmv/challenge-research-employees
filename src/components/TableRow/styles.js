@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
-
-`;
 export const EmployeeDetails = styled.tr`
   display: flex;
   flex-direction: row;
