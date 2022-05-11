@@ -4,31 +4,31 @@ import DropdownButton from "../DropdownButton/DropdownButton";
 import SearchBar from "../SearchBar/SearchBar";
 import React, { useState } from "react";
 
-const Header = ({ employeesItems, setData, searchApiData }) => {
+const Header = ({ employeesItems, setData, searchData }) => {
   const [filterValue, setFilterValue] = useState("");
   const [getValueInsideOption, setOptionValue] = useState("");
 
   const handleFilter = (event) => {
-    const filterByName = (value) => value.nome.toLowerCase().includes(event.target.value.toLowerCase());
-    
+    const filterByName = (value) =>
+      value.nome.toLowerCase().includes(event.target.value.toLowerCase());
+    const filterByCompany = (value) =>
+      value.filial.toLowerCase().includes(event.target.value.toLowerCase());
+    const filterByRegitration = (value) =>
+      value.matricula.toLowerCase().includes(event.target.value.toLowerCase());
+
     if (event.target.value === "") {
-      setData(searchApiData);
+      setData(searchData);
     }
     if (getValueInsideOption === "Funcionário(a)") {
-      const filterData = searchApiData.filter(filterByName)
-      setData(filterData);
+      const filterDataName = searchData.filter(filterByName);
+      setData(filterDataName);
     }
     if (getValueInsideOption === "Filial") {
-      const filterConfig = searchApiData.filter((item) =>
-        item.filial.toLowerCase().includes(event.target.value.toLowerCase())
-      );
-      setData(filterConfig);
-    }
-    if (getValueInsideOption === "Matricula") {
-      const filterConfig = searchApiData.filter((item) =>
-        item.matricula.toLowerCase().includes(event.target.value.toLowerCase())
-      );
-      setData(filterConfig);
+      const filterDataCompany = searchData.filter(filterByCompany);
+      setData(filterDataCompany);
+    } else {
+      const filterDataRegistration = searchData.filter(filterByRegitration);
+      setData(filterDataRegistration);
     }
     setFilterValue(event.target.value);
   };
