@@ -39,6 +39,18 @@ const EmployeesList = ({ employeesItems }) => {
       );
       setData(filterConfig);
     }
+    if (getValueInsideOption === "Filial") {
+      const filterConfig = searchApiData.filter((item) =>
+        item.filial.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+      setData(filterConfig);
+    }
+    if (getValueInsideOption === "Matricula") {
+      const filterConfig = searchApiData.filter((item) =>
+        item.matricula.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+      setData(filterConfig);
+    }
     setFilterValue(event.target.value);
   };
 
