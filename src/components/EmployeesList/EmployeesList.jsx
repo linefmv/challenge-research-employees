@@ -1,3 +1,9 @@
+import React, { useEffect, useState } from "react";
+import getData from "../../service/api";
+import SearchBar from "../SearchBar/SearchBar";
+import DropdownButton from "../DropdownButton/DropdownButton";
+import IconComponent from "../IconComponent/IconComponent";
+
 import {
   Container,
   EmployeeDetails,
@@ -7,17 +13,12 @@ import {
   EmployeeBranch,
   EmployeeAdmission,
 } from "./styles";
-import React, { useEffect, useState } from "react";
-import getData from "../../service/api";
-import SearchBar from "../SearchBar/SearchBar";
-import DropdownButton from "../DropdownButton/DropdownButton";
-import IconComponent from "../IconComponent/Icon";
 
 const EmployeesList = ({ employeesItems }) => {
   const [data, setData] = useState([]);
   const [searchApiData, setSearchApiData] = useState([]);
   const [filterValue, setFilterValue] = useState("");
-  const [selectValueOption, setOptionValue] = useState("");
+  const [getValueInsideOption, setOptionValue] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,25 +33,30 @@ const EmployeesList = ({ employeesItems }) => {
     if (event.target.value === "") {
       setData(searchApiData);
     }
-    if (selectValueOption === "Funcionário(a)") {
+    if (getValueInsideOption === "Funcionário(a)") {
+      const filterConfig = searchApiData.filter((item) =>
+        item.nome.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+      setData(filterConfig);
+    }
+    if (getValueInsideOption === "Filial") {
       const filterConfig = searchApiData.filter((item) =>
         item.filial.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
     }
-    if (selectValueOption === "Filial") {
+    if (getValueInsideOption === "Matricula") {
       const filterConfig = searchApiData.filter((item) =>
-        item.filial.toLowerCase().includes(event.target.value.toLowerCase())
-      );
-      setData(filterConfig);
-    }
-    if (selectValueOption === "Matricula") {
-      const filterConfig = searchApiData.filter((item) =>
-        item.filial.toLowerCase().includes(event.target.value.toLowerCase())
+        item.matricula.toLowerCase().includes(event.target.value.toLowerCase())
       );
       setData(filterConfig);
     }
     setFilterValue(event.target.value);
+  };
+
+  const handleSortNamebyAsc = () => {
+    const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
+    setData(sortedData);
   };
 
   const handleRemoveRow = (rowId) => {
@@ -61,10 +67,6 @@ const EmployeesList = ({ employeesItems }) => {
     setData(newData);
   };
 
-  const handleSortNamebyAsc = () => {
-    const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
-    setData(sortedData);
-  };
   return (
     <Container>
       {!!employeesItems && (
