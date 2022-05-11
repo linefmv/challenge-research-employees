@@ -9,4 +9,6 @@ body {
     background-size: 441px;
     background-repeat: no-repeat;
     background-position: center bottom; 
+    height: 100%;
+    min-height: 100vh;
 }
