@@ -3,3 +3,10 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+body {
+    background-image: url('./assets/image/employees.jpg');
+    background-size: 441px;
+    background-repeat: no-repeat;
+    background-position: left bottom; 
+}
