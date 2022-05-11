@@ -8,13 +8,13 @@ import TableHead from "../TableHead/TableHead";
 
 const EmployeesList = ({ employeesItems }) => {
   const [data, setData] = useState([]);
-  const [searchApiData, setSearchApiData] = useState([]);
+  const [searchData, setSearchData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await getData();
       setData(response.funcionarios);
-      setSearchApiData(response.funcionarios);
+      setSearchData(response.funcionarios);
     };
     fetchData();
   }, []);
@@ -24,7 +24,7 @@ const EmployeesList = ({ employeesItems }) => {
       <Container>
         <Header
           employeesItems={employeesItems}
-          searchApiData={searchApiData}
+          searchData={searchData}
           setData={setData}
         />
         <table>
