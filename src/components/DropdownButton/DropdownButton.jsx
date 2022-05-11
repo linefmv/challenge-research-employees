@@ -9,7 +9,7 @@ const DropdownButton = ({
   const removeLastElementInArray = data.slice(0, -1);
   return (
     <Container>
-      <label>Filtrar por </label>
+      <label>Filtrar por: </label>
       <select
         onChange={onChange}
         getValueInsideOption={getValueInsideOption}
