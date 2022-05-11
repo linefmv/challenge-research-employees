@@ -6,7 +6,8 @@
 <h2>Style Guide</h1>
 
 <h3> Fonte </h3>
-- Poppins: [Poppins](https://fonts.google.com/specimen/Poppins)
+
+[Poppins](https://fonts.google.com/specimen/Poppins)
 
 <h3> Cores </h3>
 
