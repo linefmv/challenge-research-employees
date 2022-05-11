@@ -9,8 +9,7 @@ export const Container = styled.main`
   align-items: stretch;
 
   table {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 800px;
+    margin-top: 40px;
+    width: 84%
   }
 `;

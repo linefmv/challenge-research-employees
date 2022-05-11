@@ -9,20 +9,16 @@ export const Container = styled.thead`
   vertical-align: baseline;
 
   tr {
-      display: flex;
-      justify-content: space-evenly;
+    display: flex;
+    justify-content: space-evenly;
   }
+
   th {
     padding: 15px 0;
 
     & .caretImg {
       width: 24px;
-      filter: invert(0);
       padding-left: 5px;
-    }
-
-    & .caretIcon {
-      display: none;
     }
 
     &:first-child {
@@ -30,11 +26,23 @@ export const Container = styled.thead`
         display: inline;
       }
     }
+    & .caretIcon {
+      display: none;
+    }
   }
-  @media (max-width: 584px) {
+
+  @media (max-width: 934px) {
+    tr {
+      align-items: center;
+    }
     th {
       padding: 0;
-      font-size: 12px;
+      font-size: 10px;
+
+      & .caretImg {
+        width: 22px;
+        padding-left: 5px;
+      }
     }
   }
 `;
