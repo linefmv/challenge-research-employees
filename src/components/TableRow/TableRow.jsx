@@ -1,11 +1,4 @@
-import {
-  EmployeeDetails,
-  EmployeeName,
-  EmployeeRegister,
-  EmployeePosition,
-  EmployeeBranch,
-  EmployeeAdmission,
-} from "./styles";
+import { EmployeeDetails, TableData } from "./styles";
 
 import IconComponent from "../IconComponent/Icon";
 
@@ -24,23 +17,23 @@ const TableRow = ({ data, setData }) => {
         return (
           <>
             <EmployeeDetails key={index}>
-              <td>
+              <TableData>
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGb3wWKOEGiZOiTSiZDoeHUAsyJPim4hWKGEXu5b_iWFxT-Lg-Lv5lqt4Jk4-i5XAbc0M&usqp=CAU"
                   alt=""
                   className="avatar"
                 />
-              </td>
-              <div className="ceoAndName">
-                <EmployeeName> {item.nome} </EmployeeName>
-                <EmployeePosition> {item.cargo} </EmployeePosition>
+              </TableData>
+              <div className="nameAndPosition">
+                <TableData> {item.nome} </TableData>
+                <TableData> {item.cargo} </TableData>
               </div>
-              <EmployeeBranch> {item.filial} </EmployeeBranch>
-              <EmployeeRegister> {item.matricula} </EmployeeRegister>
-              <EmployeeAdmission> {item.dataAdmissao} </EmployeeAdmission>
+              <TableData> {item.filial} </TableData>
+              <TableData> {item.matricula} </TableData>
+              <TableData> {item.dataAdmissao} </TableData>
               <td>
                 <IconComponent
-                  className="image"
+                  className="deleteIcon"
                   src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-delete-miscellaneous-kiranshastry-gradient-kiranshastry.png"
                   onClick={() => handleRemoveRow(item.id)}
                 />
