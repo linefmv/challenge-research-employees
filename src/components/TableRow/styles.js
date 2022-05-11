@@ -4,13 +4,10 @@ export const EmployeeDetails = styled.tr`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom: 0.2px solid #d1cbcb;
   padding: 12px 0;
 
-  div td {
-    text-align: left;
-  }
 
   & .avatar {
     width: 63px;
@@ -21,7 +18,7 @@ export const EmployeeDetails = styled.tr`
   & .nameAndPosition {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   & .deleteIcon {
@@ -35,7 +32,7 @@ export const EmployeeDetails = styled.tr`
 
   @media (max-width: 950px) {    
     td {
-      font-size: 10px;
+      font-size: 12px;
       width: fit-content;
     }
 
@@ -44,16 +41,12 @@ export const EmployeeDetails = styled.tr`
     }
   }
   @media (max-width: 600px) {
-    background-color: azure;
     font-size: 12px;
-
-    background-color: azure;
-    font-size: 10px;
     padding: 12px 0;
     justify-content: space-between;
 
     & .avatar,
-    & .image {
+    & .delete {
       display: none;
     }
 
@@ -61,35 +54,11 @@ export const EmployeeDetails = styled.tr`
       align-items: baseline;
     }
   }
-  /*
-  @media (max-width: 454px) {
-    width: 325px;
-    background-color: azure;
-    font-size: 10px;
-    padding: 12px 0;
-    justify-content: space-between;
-    div {
-      width: 65px;
-      align-items: flex-start;
-    }
-
-    td {
-      width: 55px;
-    }
-    div td {
-      width: 153px;
-    }
-    td:last-child {
-      width: 0;
-    }
-    td:first-child{
-      width: 0;
-
-    }
-  } */
 `;
+
 export const TableData = styled.td`
   font-size: 15px;
+  
   td {
     width: 150px;
     text-align: center;

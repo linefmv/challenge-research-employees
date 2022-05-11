@@ -4,6 +4,7 @@ export const Container = styled.button`
   width: fit-content;
   display: flex;
   flex-direction: column;
+
   background: none;
   color: inherit;
   border: none;
@@ -38,6 +39,12 @@ export const Container = styled.button`
     select {
       font-size: auto;
       height: auto;
+    }
+  }
+  @media (max-width: 514px) {
+    label,
+    label {
+      font-size: 12px;
     }
   }
 `;
