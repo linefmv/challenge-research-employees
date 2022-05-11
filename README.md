@@ -7,11 +7,10 @@
   <img src="https://img.shields.io/badge/React-18.1.0-blue" alt="React">
 </p>
 
-<h1 align="center">Find your employees!</h1>
+<h1 align="center">Procure os seus funcionários!</h1>
 
 ## Sumário
 
-- [Sumário](#sumario)
 - [Sobre o projeto](#sobre-o-projeto)
 - [Instruções para iniciar o projeto](#instruções-para-iniciar-o-projeto)
 
@@ -24,6 +23,12 @@
 1. Clone este repositório
 2. Instale as dependências gerais com `yarn install`
 3. Inicie o banco de dados `yarn start:server`
-4. Após, a terceira etapa, inicie o servidor com a aplicação no navagador de preferência, com o  `yarn start`
+4. Após, a terceira etapa, inicie o servidor com a aplicação no navagador de preferência, com o comando `yarn start`
 
-Este projeto reforça mensagem de commits com o padrão semântico.
+## Technologias
+
+- Axios
+- Styled-components
+
+## Design
+- Para entender um pouco mais do conceito, você pode entrar [aqui](Design.md)
