@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import getData from "./service/api";
 import EmployeesList from "./components/EmployeesList/EmployeesList";
-
 import "./App.css";
+import { Footer } from "./components/Footer/styles";
 
 function App() {
   const [data, setData] = useState([]);
@@ -18,6 +18,7 @@ function App() {
   return (
     <>
       <EmployeesList employeesItems={data} />
+      <Footer/>
     </>
   );
 }
