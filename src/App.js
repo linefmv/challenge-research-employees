@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import getData from "./service/api";
-import Header from "./components/Header/Header";
 import EmployeesList from "./components/EmployeesList/EmployeesList";
 
 import "./App.css";
