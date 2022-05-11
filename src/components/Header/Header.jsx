@@ -9,14 +9,14 @@ const Header = ({ employeesItems, setData, searchApiData }) => {
   const [getValueInsideOption, setOptionValue] = useState("");
 
   const handleFilter = (event) => {
+    const filterByName = (value) => value.nome.toLowerCase().includes(event.target.value.toLowerCase());
+    
     if (event.target.value === "") {
       setData(searchApiData);
     }
     if (getValueInsideOption === "Funcionário(a)") {
-      const filterConfig = searchApiData.filter((item) =>
-        item.nome.toLowerCase().includes(event.target.value.toLowerCase())
-      );
-      setData(filterConfig);
+      const filterData = searchApiData.filter(filterByName)
+      setData(filterData);
     }
     if (getValueInsideOption === "Filial") {
       const filterConfig = searchApiData.filter((item) =>
@@ -40,10 +40,10 @@ const Header = ({ employeesItems, setData, searchApiData }) => {
         <DropdownButton
           data={employeesItems}
           onChange={(e) => setOptionValue(e.target.value)}
-          getValueInsideOption={getValueInsideOption}
           setOptionValue={setOptionValue}
         />
       )}
+
       <SearchBar value={filterValue} onInput={(event) => handleFilter(event)} />
     </Container>
   );
