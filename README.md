@@ -16,7 +16,17 @@
 
 ## Sobre o projeto
 
-<p align="justify">Realizado para auxiliar a sua empresa a buscar o funcionário de uma maneira rápida e prática!</p>
+<p align="justify">Realizado para auxiliar a sua empresa a buscar o funcionário de uma maneira rápida e prática!
+  
+### Ações implementadas 
+  
+**A pessoa usuária pode:**  
+  
+- [X] Filtrar pelo funcionário, filial e também pela matrícula.
+- [X] Deletar da lista aquele funcionário.
+- [X] Ordernar em ordem alfabética através dos nomes dos funcionários. 
+  
+</p>
 
 ## Instruções para iniciar o projeto
 
