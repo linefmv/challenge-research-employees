@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import IconComponent from "../IconComponent/Icon";
+import IconComponent from "../IconComponent/IconComponent";
 import { Button } from "./styles";
 
 const BackToTopButton = () => {

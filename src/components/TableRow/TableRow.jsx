@@ -1,6 +1,6 @@
 import { EmployeeDetails, TableData } from "./styles";
 
-import IconComponent from "../IconComponent/Icon";
+import IconComponent from "../IconComponent/IconComponent";
 
 const TableRow = ({ data, setData }) => {
   const handleRemoveRow = (rowId) => {

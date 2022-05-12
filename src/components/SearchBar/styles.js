@@ -12,9 +12,7 @@ export const SearchInput = styled.input`
   background-size: 15px;
   margin-right: 10px;
 
-
   @media (max-width: 514px) {
     padding: 2px 23px 2px 30px;
-
   }
 `;

@@ -1,12 +1,13 @@
-import IconComponent from "../IconComponent/Icon";
+import IconComponent from "../IconComponent/IconComponent";
 import { Container } from "./styles";
 
-
 const TableHead = ({ employeesItems, data, setData }) => {
-    const handleSortNamebyAsc = () => {
-        const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
-        setData(sortedData);
-      };
+  
+  const handleSortNamebyAsc = () => {
+    const sortedData = [...data].sort((a, b) => a.nome.localeCompare(b.nome));
+    setData(sortedData);
+  };
+  
   return (
     <Container>
       <tr>
