@@ -6,12 +6,18 @@
 <h2>Style Guide</h1>
 
 <h3> Fonte </h3>
-- Nome da Fonte: []()
 
-| Cores            | Hex                                                              |
-| ---------------- | ---------------------------------------------------------------- |
-| Azul Ciano       | ![#5181a9](https://via.placeholder.com/10/5181a9?text=+) #5181a9 |
-| Azul força aérea | ![#5d8aa8](https://via.placeholder.com/10/5d8aa8?text=+) #5d8aa8 |
-| Tomato           | ![#ff6347](https://via.placeholder.com/10/ff6347?text=+) #ff6347 |
-| Branco fantasma  | ![#f8f8ff](https://via.placeholder.com/10/f8f8ff?text=+) #f8f8ff |
-| Branco           | ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) #ffffff |
+[Poppins](https://fonts.google.com/specimen/Poppins)
+
+<h3> Cores </h3>
+
+
+| Hex                                                              |
+| ---------------------------------------------------------------- |
+| ![#000](https://via.placeholder.com/10/000?text=+) #000    |
+| ![#cccccc](https://via.placeholder.com/10/cccccc?text=+) #cccccc |
+| ![#F4E3E6](https://via.placeholder.com/10/F4E3E6?text=+) #F4E3E6 |
+| ![#f8f9fd](https://via.placeholder.com/10/f8f9fd?text=+) #f8f9fd |
+| ![#d1cbcb](https://via.placeholder.com/10/d1cbcb?text=+) #d1cbcb |
+| ![#ddd](https://via.placeholder.com/10/ddd?text=+) #ddd |
+
