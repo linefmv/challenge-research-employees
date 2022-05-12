@@ -22,7 +22,8 @@
   
 **A pessoa usuária pode:**  
   
-- [X] Filtrar pelo funcionário, filial e também pela matrícula.
+- [X] Filtrar por todas os campos, sem precisar usar o filtro.
+- [X] Filtrar pelo funcionário, filial e também pela matrícula pelo do filtro.
 - [X] Deletar da lista aquele funcionário.
 - [X] Ordernar em ordem alfabética através dos nomes dos funcionários. 
   
