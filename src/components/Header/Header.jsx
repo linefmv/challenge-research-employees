@@ -9,27 +9,49 @@ const Header = ({ employeesItems, setData, searchData }) => {
   const [getValueInsideOption, setOptionValue] = useState("");
 
   const handleFilter = (event) => {
-    const filterByName = (value) =>
-      value.nome.toLowerCase().includes(event.target.value.toLowerCase());
-    const filterByCompany = (value) =>
-      value.filial.toLowerCase().includes(event.target.value.toLowerCase());
-    const filterByRegitration = (value) =>
-      value.matricula.toLowerCase().includes(event.target.value.toLowerCase());
-
     if (event.target.value === "") {
       setData(searchData);
     }
+
+    if (
+      getValueInsideOption === "Escolha seu Filtro" ||
+      getValueInsideOption === ""
+    ) {
+      const filterConfig = searchData.filter((item) => {
+        return (
+          item.nome.toLowerCase().includes(event.target.value.toLowerCase()) ||
+          item.matricula
+            .toLowerCase()
+            .includes(event.target.value.toLowerCase()) ||
+          item.filial.toLowerCase().includes(event.target.value.toLowerCase()) ||
+          item.cargo.toLowerCase().includes(event.target.value.toLowerCase()) ||
+          item.dataAdmissao.toLowerCase().includes(event.target.value.toLowerCase())
+        );
+      });
+      setData(filterConfig);
+    }
+
     if (getValueInsideOption === "Funcionário(a)") {
-      const filterDataName = searchData.filter(filterByName);
-      setData(filterDataName);
+      const filterConfig = searchData.filter((item) =>
+        item.nome.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+      setData(filterConfig);
     }
+
     if (getValueInsideOption === "Filial") {
-      const filterDataCompany = searchData.filter(filterByCompany);
-      setData(filterDataCompany);
-    } else {
-      const filterDataRegistration = searchData.filter(filterByRegitration);
-      setData(filterDataRegistration);
+      const filterConfig = searchData.filter((item) =>
+        item.filial.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+      setData(filterConfig);
     }
+
+    if (getValueInsideOption === "Matricula") {
+      const filterConfig = searchData.filter((item) =>
+        item.matricula.toLowerCase().includes(event.target.value.toLowerCase())
+      );
+      setData(filterConfig);
+    }
+
     setFilterValue(event.target.value);
   };
 
@@ -43,7 +65,6 @@ const Header = ({ employeesItems, setData, searchData }) => {
           setOptionValue={setOptionValue}
         />
       )}
-
       <SearchBar value={filterValue} onInput={(event) => handleFilter(event)} />
     </Container>
   );
