@@ -20,17 +20,13 @@ export const Container = styled.button`
     line-height: 1.5em;
     padding: 0.5px 3.5px 0.5px 1px;
     cursor: pointer;
-    box-shadow: 0 0 2px rgb(204, 204, 204);
+    box-shadow: 0 0 2px #cccccc;
     transition: all 0.5s ease;
   }
 
   option {
     font-size: 12px;
     color: #000;
-
-    :hover {
-      background-color: blue;
-    }
   }
   @media (max-width: 934px) {
     option {
