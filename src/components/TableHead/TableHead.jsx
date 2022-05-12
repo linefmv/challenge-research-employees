@@ -19,7 +19,7 @@ const TableHead = ({ employeesItems, data, setData }) => {
                 onClick={handleSortNamebyAsc}
                 className="caretImg caretIcon"
                 rel="icon"
-                src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/000000/external-arrow-down-arrow-line-royyan-wijaya-detailed-outline-royyan-wijaya.png"
+                src="https://img.icons8.com/material-sharp/24/000000/alphabetical-sorting-2.png"
                 alt="Icon with arrow down"
               />
             </th>

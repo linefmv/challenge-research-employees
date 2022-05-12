@@ -34,7 +34,7 @@ const TableRow = ({ data, setData }) => {
               <td>
                 <IconComponent
                   className="deleteIcon"
-                  src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-delete-miscellaneous-kiranshastry-gradient-kiranshastry.png"
+                  src="https://img.icons8.com/material-rounded/24/000000/filled-trash.png"
                   onClick={() => handleRemoveRow(item.id)}
                 />
               </td>
