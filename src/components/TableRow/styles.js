@@ -1,13 +1,9 @@
 import styled from "styled-components";
 
 export const EmployeeDetails = styled.tr`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  border-bottom: 0.2px solid #d1cbcb;
-  padding: 12px 0;
+  text-align: center;
 
+ 
   & .avatar {
     width: 63px;
     height: 63px;
@@ -56,12 +52,8 @@ export const EmployeeDetails = styled.tr`
 `;
 
 export const TableData = styled.td`
-  font-size: 15px;
 
-  td {
-    width: 150px;
-    text-align: center;
-  }
+  
 
   @media (max-width: 950px) {
     font-size: 13px;

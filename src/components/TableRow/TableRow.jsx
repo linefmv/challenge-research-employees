@@ -17,13 +17,6 @@ const TableRow = ({ data, setData }) => {
         return (
           <>
             <EmployeeDetails key={index}>
-              <TableData>
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGb3wWKOEGiZOiTSiZDoeHUAsyJPim4hWKGEXu5b_iWFxT-Lg-Lv5lqt4Jk4-i5XAbc0M&usqp=CAU"
-                  alt=""
-                  className="avatar"
-                />
-              </TableData>
               <div className="nameAndPosition">
                 <TableData> {item.nome} </TableData>
                 <TableData> {item.cargo} </TableData>
