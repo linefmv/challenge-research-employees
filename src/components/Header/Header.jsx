@@ -1,5 +1,5 @@
 import { Container, Image } from "./styles";
-import Logo from "../../assets/image/logo-softplan.png";
+import Logo from "../../assets/image/findLogo.png";
 import DropdownButton from "../DropdownButton/DropdownButton";
 import SearchBar from "../SearchBar/SearchBar";
 import React, { useState } from "react";

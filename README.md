@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="logo da softplan" src="src/assets/image/logo-softplan.png" width="200px">
+  <img alt="logo da findLogo" src="src/assets/image/findLogo.png" width="200px">
 </p>
 
 <p align="center">
@@ -11,8 +11,12 @@
 
 ## Sumário
 
+- [Sumário](#sumário)
 - [Sobre o projeto](#sobre-o-projeto)
+  - [Ações implementadas](#ações-implementadas)
 - [Instruções para iniciar o projeto](#instruções-para-iniciar-o-projeto)
+- [Technologias](#technologias)
+- [Design](#design)
 
 ## Sobre o projeto
 

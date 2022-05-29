@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="logo da softplan" src="src/assets/image/logo-softplan.png" width="200px">
+  <img alt="logo da findLogo" src="src/assets/image/findLogo.png" width="200px">
 </p>
 
 <h1>Find your employees!</h1>
