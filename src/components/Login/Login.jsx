@@ -21,9 +21,9 @@ const UserLogin = () => {
     <>
       <Title>Acessar o Procure o seu usuário </Title>
       <Form>
-          <label htmlFor="email">E-mail</label>
-          <input type="text" name="email" onChange={onChange} value={values.user}/>
-          <label htmlFor="password">Senha</label>
+          <label htmlFor="user">User</label>
+          <input type="text" name="user" onChange={onChange} value={values.user}/>
+          <label htmlFor="password">Password</label>
           <input type="password" name="password" onChange={onChange} value={values.password} />
           <input type="submit" name="send" />
       </Form>
