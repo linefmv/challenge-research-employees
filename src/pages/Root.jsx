@@ -4,18 +4,19 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import Store from '../components/Store/Provider';
-import Home from './Home/Home';
+import StoreProvider from '../components/Store/StoreProvider';
+import RoutesPrivate from "../components/Routes/Private/Private";
+import FindYourEmployees from './FindYourEmployees/FindYourEmployees';
 import Login from './Login/Login';
 
 const PagesRoot = () => (
   <Router>
-    <Store>
+    <StoreProvider>
     <Switch>
       <Route path="/login" component={Login} />
-      <Route path="/" component={Home} />
+      <RoutesPrivate path="/" component={FindYourEmployees} />
     </Switch>
-    </Store>
+    </StoreProvider>
   </Router>
 )
 
