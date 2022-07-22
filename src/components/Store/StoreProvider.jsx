@@ -1,6 +1,6 @@
 import React from 'react';
 import StoreContext from './StoreContext';
-import useStorage from 'utils/useStorage';
+import useStorage from '../../utils/useStore';
 
 const StoreProvider = ({ children }) => {
   const [token, setToken] = useStorage('token');

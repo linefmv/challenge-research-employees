@@ -1,8 +1,8 @@
 import React from 'react';
-import Login from 'components/Login/Login';
+import UserLogin from '../../components/Login/Login';
 
 const PagesLogin = () => (
-  <Login />
+  <UserLogin />
 );
 
 export default PagesLogin;
