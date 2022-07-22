@@ -1,40 +1,41 @@
 import React, { useState, useContext } from "react";
 import StoreContext from "../Store/StoreContext";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Title, Form } from "./styles";
 
 function initialState() {
-  return {
-    user: "",
-    password: "",
-  };
+  return { user: '', password: '' };
 }
 
 function login({ user, password }) {
-  if (user && password === "admin") {
-    return { token: "1234" };
+  if (user === 'admin' && password === 'admin') {
+    return { token: '1234' };
   }
-  return { error: "Usuário ou senha inválidos" };
+  return { error: 'Usuário ou senha inválido' };
 }
 
 const UserLogin = () => {
   const [values, setValues] = useState(initialState);
   const { setToken } = useContext(StoreContext);
-  const navigate = useNavigate();
+  const history = useHistory();
 
   function onChange(event) {
-    const { name, value } = event.target;
-    setValues({ ...values, [name]: value });
+    const { value, name } = event.target;
+
+    setValues({
+      ...values,
+      [name]: value
+    });
   }
 
-  function OnSubmit(event) {
+  function onSubmit(event) {
     event.preventDefault();
 
     const { token } = login(values);
 
     if (token) {
       setToken(token);
-      return navigate("/login");
+      return history.push('/');
     }
 
     setValues(initialState);
@@ -43,7 +44,7 @@ const UserLogin = () => {
   return (
     <>
       <Title>Acessar o Procure o seu usuário </Title>
-      <Form>
+      <Form  onSubmit={onSubmit}>
         <label htmlFor="user">User</label>
         <input
           type="text"
@@ -58,7 +59,7 @@ const UserLogin = () => {
           onChange={onChange}
           value={values.password}
         />
-        <input type="submit" name="send" onSubmit={OnSubmit} />
+        <input type="submit" name="send" />
       </Form>
     </>
   );
