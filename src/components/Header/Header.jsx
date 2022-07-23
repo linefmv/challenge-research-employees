@@ -1,16 +1,14 @@
-import { Container, Image } from "./styles";
+import { Container, Image, SingOut } from "./styles";
 import Logo from "../../assets/image/findLogo.png";
 import DropdownButton from "../DropdownButton/DropdownButton";
 import SearchBar from "../SearchBar/SearchBar";
-import React, { useState, useContext} from "react";
-import StoreContext from '../../components/Store/StoreContext';
-
+import React, { useState, useContext } from "react";
+import StoreContext from "../../components/Store/StoreContext";
 
 const Header = ({ employeesItems, setData, searchData }) => {
   const [filterValue, setFilterValue] = useState("");
   const [getValueInsideOption, setOptionValue] = useState("");
   const { setToken } = useContext(StoreContext);
-
 
   const handleFilter = (event) => {
     if (event.target.value === "") {
@@ -27,9 +25,13 @@ const Header = ({ employeesItems, setData, searchData }) => {
           item.matricula
             .toLowerCase()
             .includes(event.target.value.toLowerCase()) ||
-          item.filial.toLowerCase().includes(event.target.value.toLowerCase()) ||
+          item.filial
+            .toLowerCase()
+            .includes(event.target.value.toLowerCase()) ||
           item.cargo.toLowerCase().includes(event.target.value.toLowerCase()) ||
-          item.dataAdmissao.toLowerCase().includes(event.target.value.toLowerCase())
+          item.dataAdmissao
+            .toLowerCase()
+            .includes(event.target.value.toLowerCase())
         );
       });
       setData(filterConfig);
@@ -70,9 +72,9 @@ const Header = ({ employeesItems, setData, searchData }) => {
         />
       )}
       <SearchBar value={filterValue} onInput={(event) => handleFilter(event)} />
-      <button type="button" onClick={() => setToken(null)}>
+      <SingOut type="button" onClick={() => setToken(null)}>
         Sair
-      </button>
+      </SingOut>
     </Container>
   );
 };
