@@ -14,20 +14,34 @@ export const Container = styled.button`
   outline: inherit;
 
   select {
+    font-weight: 700;
+    color: #757a84;
+    margin-top: 5px;
     background-color: white;
     border: thin solid grey;
     border-radius: 4px;
     line-height: 1.5em;
-    padding: 0.5px 3.5px 0.5px 1px;
+    padding: 5px 3.5px 5px 1px;
     cursor: pointer;
     box-shadow: 0 0 2px #cccccc;
     transition: all 0.5s ease;
+    width: 157px;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+
+    :hover {
+      transform: translateY(-2px);
+      box-shadow: 2px 2px 5px -1px rgba(0, 0, 0, 0.35);
+      transition: all 0.4s;
+    }
   }
 
   option {
-    font-size: 12px;
-    color: #000;
+    font-weight: 700;
+    color: #757a84;
   }
+
   @media (max-width: 934px) {
     option {
       font-size: 10px;

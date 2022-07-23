@@ -16,7 +16,6 @@ export const EmployeeDetails = styled.tr`
   &:hover {
     background-color: #ddd;
   }
-
   @media (max-width: 950px) {
     text-align: left;
   }
