@@ -26,6 +26,5 @@ export const SearchInput = styled.input`
     height: 30px;
     font-size: 12px;
     width: 200px;
-
   }
 `;

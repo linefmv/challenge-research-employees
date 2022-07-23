@@ -12,5 +12,6 @@ export const Container = styled.main`
     margin: 40px 0;
     width: 84%;
     margin-bottom: 226px;
+    border-collapse: collapse;
   }
 `;
