@@ -21,7 +21,11 @@ export const SearchInput = styled.input`
     box-shadow: 0 2px 6px -8px #f2f2f2;
   }
 
-  @media (max-width: 514px) {
+  @media (max-width: 734px) {
     padding: 2px 23px 2px 30px;
+    height: 30px;
+    font-size: 12px;
+    width: 200px;
+
   }
 `;

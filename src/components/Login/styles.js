@@ -8,6 +8,9 @@ export const Content = styled.main`
   #logo {
     padding: 5px;
     height: fit-content;
+    @media (max-width: 900px) {
+      margin: 0 auto;
+    }
   }
 `;
 
@@ -20,8 +23,17 @@ export const Container = styled.div`
   align-items: center;
   justify-items: center;
 
+  @media (max-width: 900px) {
+    grid-template-areas:
+      "title"
+      "form";
+  }
+
   img {
     grid-area: image;
+    @media (max-width: 900px) {
+      display: none;
+    }
   }
 `;
 

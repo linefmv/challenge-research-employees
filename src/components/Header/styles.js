@@ -10,8 +10,10 @@ export const Container = styled.header`
   background-color: #f4e3e6;
   border-radius: 0 0 6px 6px;
 
-  @media (max-width: 794px) {
-    height: 150px;
+  @media (max-width: 814px) {
+    height: 260px;
+    padding-bottom: 10px;
+   flex-direction: column;
   }
 `;
 export const Image = styled.img`
@@ -19,7 +21,7 @@ export const Image = styled.img`
   padding-left: 12px;
 
   @media (max-width: 544px) {
-    width: 75px;
+    width: 150px;
   }
 `;
 
