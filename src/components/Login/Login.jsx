@@ -1,7 +1,9 @@
 import React, { useState, useContext } from "react";
 import StoreContext from "../Store/StoreContext";
 import { useHistory } from "react-router-dom";
-import { Title, Form } from "./styles";
+import { Title, Form, Container, Content } from "./styles";
+import Logo from "../../assets/image/findLogo.png";
+import employeeLogin from "../../assets/image/employeeLogin.png";
 
 function initialState() {
   return { user: '', password: '' };
@@ -42,8 +44,11 @@ const UserLogin = () => {
   }
 
   return (
-    <>
-      <Title>Acessar o Procure o seu usuário </Title>
+      <Content>
+      <img src={Logo} id="logo" alt="Find You employees Logo" />
+    <Container>
+      <img src={employeeLogin} alt="Employee Login" />
+      <Title>Login </Title>
       <Form  onSubmit={onSubmit}>
         <label htmlFor="user">User</label>
         <input
@@ -61,7 +66,8 @@ const UserLogin = () => {
         />
         <input type="submit" name="send" />
       </Form>
-    </>
+    </Container>
+          </Content>
   );
 };
 
