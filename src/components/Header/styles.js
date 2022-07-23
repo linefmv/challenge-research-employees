@@ -17,7 +17,7 @@ export const Container = styled.header`
   }
 `;
 export const Image = styled.img`
-  width: 150px;
+  aspect-ratio: attr(width) / attr(height);
   padding-left: 12px;
 
   @media (max-width: 544px) {
@@ -32,9 +32,9 @@ export const SingOut = styled.button`
   padding: 15px 40px;
   margin-top: 5px;
   background-color: #b08bf8;
-  color: #fff;
+  color: 	#000028;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.13);
   border: none;
   transition: all 0.3s ease;

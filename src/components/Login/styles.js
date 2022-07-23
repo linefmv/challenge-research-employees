@@ -88,10 +88,10 @@ export const Form = styled.form`
     text-align: center;
     padding: 10px;
     margin-top: 5px;
-    color: #fff;
+    color: 	#000028;
     font-size: 14px;
     margin-left: auto;
-    font-weight: 500;
+    font-weight: 600;
     box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.13);
     border: none;
     transition: all 0.3s ease;

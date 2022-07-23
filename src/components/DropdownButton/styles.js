@@ -15,7 +15,7 @@ export const Container = styled.button`
 
   select {
     font-weight: 700;
-    color: #757a84;
+    color:#000028;
     margin-top: 5px;
     background-color: white;
     border: thin solid grey;
@@ -39,7 +39,7 @@ export const Container = styled.button`
 
   option {
     font-weight: 700;
-    color: #757a84;
+    color: #000028;
   }
 
   @media (max-width: 934px) {
