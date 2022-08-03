@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 export default async function getData () {
-  const response = await axios.get('http://localhost:8080/db')
+  const url = 'https://my-json-server.typicode.com/linefmv/find-employees-db/db'
+  const response = await axios.get(url)
     .then(response => response.data)
     .catch(error => error)
   return await response

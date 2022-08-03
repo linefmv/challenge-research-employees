@@ -2,10 +2,15 @@ import styled from "styled-components";
 
 export const EmployeeDetails = styled.tr`
   text-align: center;
+  height: 60px;
+  border-bottom: 1px solid #b08bf8;
+
   & .nameAndPosition {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
+    height: 60px;
   }
 
   & .deleteIcon {

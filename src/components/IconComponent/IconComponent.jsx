@@ -1,14 +1,16 @@
 import { Button, Image } from "./styles";
 
-const IconComponent = ({ size, className, style, onClick, src }) => {
+const IconComponent = ({width, height, className, style, onClick, src, alt, ariaLabel }) => {
   return (
     <Button onClick={onClick}>
       <Image
         className={className}
         style={style}
-        width={`${size}px`}
-        height={`${size}px`}
+        width={width}
+        height={height}
         src={src}
+        alt={alt}
+        ariaLabel={ariaLabel}
       />
     </Button>
   );

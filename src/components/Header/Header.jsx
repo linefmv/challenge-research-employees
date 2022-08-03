@@ -63,7 +63,7 @@ const Header = ({ employeesItems, setData, searchData }) => {
 
   return (
     <Container>
-      <Image src={Logo} />
+      <Image src={Logo} width="162" height="82" alt="find you employees" />
       {!!employeesItems && (
         <DropdownButton
           data={employeesItems}

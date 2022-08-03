@@ -13,10 +13,10 @@ const TableRow = ({ data, setData }) => {
 
   return (
     <>
-      {data.map((item, index) => {
+      {data.map((item) => {
         return (
           <>
-            <EmployeeDetails key={index}>
+            <EmployeeDetails key={item.id}>
               <div className="nameAndPosition">
                 <TableData> {item.nome} </TableData>
                 <TableData> {item.cargo} </TableData>
@@ -26,6 +26,11 @@ const TableRow = ({ data, setData }) => {
               <TableData> {item.dataAdmissao} </TableData>
               <td>
                 <IconComponent
+                  alt="Icon with trash"
+                  ariaLabel="Icon with trash"
+                  width="25"
+                  height="25"
+                  title="Remove employee"
                   className="deleteIcon"
                   src="https://img.icons8.com/material-rounded/24/000000/filled-trash.png"
                   onClick={() => handleRemoveRow(item.id)}
