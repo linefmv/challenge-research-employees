@@ -13,10 +13,10 @@ const TableRow = ({ data, setData }) => {
 
   return (
     <>
-      {data.map((item, index) => {
+      {data.map((item) => {
         return (
           <>
-            <EmployeeDetails key={index}>
+            <EmployeeDetails key={item.id}>
               <div className="nameAndPosition">
                 <TableData> {item.nome} </TableData>
                 <TableData> {item.cargo} </TableData>
