@@ -38,8 +38,10 @@
 
 1. Clone este repositório
 2. Instale as dependências gerais com `yarn install`
-3. Inicie o banco de dados `yarn start:server`
-4. Após, a terceira etapa, inicie o servidor com a aplicação no navagador de preferência, com o comando `yarn start`
+3. Se você quiser usar o **banco de dados local**, substitua em `service/api` a linha `4`, a url para: 'http://localhost:8080/db'. 
+ - Após isso, inicie o banco de dados com o comando `yarn start:server`
+
+4. Inicie o servidor com a aplicação no navegador de preferência, com o comando `yarn start`
 
 ## Tech
 
