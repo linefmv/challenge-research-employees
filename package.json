@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@testing-library/react": "^13.3.0",
     "axios": "^0.27.2",
     "js-cookie": "^3.0.1",
     "json-server": "^0.17.0",
@@ -16,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start:server": "json-server -p 8080 --watch db.json",
+    "cypress:open": "cypress open",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
@@ -36,5 +38,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^10.8.0",
+    "jest": "^28.1.3"
   }
 }
